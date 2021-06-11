@@ -1,0 +1,208 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("shlop rg.ttf");
+}
+
+
+header>h1 { text-align:center; font-size: 80px; font-family: myFirstFont; }
+
+body{ background-image: url('gray-painted-background_53876-94041.jpg');}
+
+.bubbles img{
+	width:50px;
+	animation: bubble 7s linear infinite;
+}
+
+.bubbles{
+	width:100%;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: -500px;
+}
+
+@keyframes bubble{
+		0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+		50%{
+		
+		opacity: 1;
+	}
+		70%{
+		
+		opacity: 1;
+	}
+		100%{
+		transform: translateY(-80vh);
+		opacity: 0;
+	}
+}
+	
+	
+.bubbles img:nth-child(1){
+	animation-delay: 2s;
+	width:45px;
+}
+.bubbles img:nth-child(2){
+	animation-delay: 0.5s;
+}
+.bubbles img:nth-child(3){
+	animation-delay: 3s;
+	width:40px;
+}
+.bubbles img:nth-child(4){
+	animation-delay: 3.5s;
+}
+.bubbles img:nth-child(5){
+	animation-delay: 2.5s;
+	width:30px;
+}
+.bubbles img:nth-child(6){
+	animation-delay: 4s;
+}
+.bubbles img:nth-child(7){
+	animation-delay: 6s;
+	width:55px;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height:50px;
+	background-color: #333;
+	position: sticky;
+	top: 0;
+	z-index:1;
+
+}
+
+	
+.meniu>li{
+	float:left;	
+	text-align:center;
+	background-color: #333;
+	
+}
+
+li>a{
+	vertical-align: middle;
+	color:white;
+	font-family: myFirstFont;
+	font-size: 32px;
+	line-height: 50px;
+	height: 50px;
+	text-align:center;
+	margin-right:30px;
+	margin-left:30px;
+}
+
+.meniu>li:hover{
+	background-color:red;
+}
+
+.submeniu{
+	 display:none;
+}
+
+.meniu>li:hover .submeniu{
+	display: block;
+}
+
+.submeniu>ul>li{
+	background-color:black;
+}
+
+.submeniu>ul>li:hover{
+  background-color: #8B0000;
+}
+
+#special{
+background-color:red;
+float:right;
+} 
+	
+	
+div>h2{
+	font-family: myFirstFont;
+	font-size: 32px;
+}
+
+#sl> img{
+	width:200px;
+	height:350px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	border: 4px solid black;
+	border-radius: 30px;
+}
+
+
+section{
+	box-sizing: border-box;
+	font-family: myFirstFont;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
+.container{
+	width: 500px;
+	background-color: grey;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid{
+	display: grid;
+	grid-template-colums: repeat(2, auto);
+	gap: 10px;
+	margin: 20px 0;	
+}
+
+.btn{
+	border:3px solid black; 
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.btn:hover{
+	border-color: yellow;
+}
+
+.btn.correct{
+	background-color:green;
+}
+
+.btn.wrong{
+	background-color:red;
+}
+
+.start-btn, .next-btn{
+	font-size:1.5rem;
+	font-weight:bold;
+	padding: 10px 20px;
+}
+
+.controls{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.hide{
+	display:none;
+}
+
+button{font-family: myFirstFont;}
+
+#result{
+	font-family: myFirstFont;
+	font-size: 28px;
+}

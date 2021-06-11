@@ -1,0 +1,182 @@
+#col {color: red; }
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("shlop rg.ttf");
+}
+
+
+header>h1 { text-align:center; font-size: 80px; font-family: myFirstFont; }
+
+body{ background-image: url('gray-painted-background_53876-94041.jpg');}
+  
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height:50px;
+	background-color: #333;
+	position: sticky;
+	top: 0;
+	z-index:1;
+
+}
+
+	
+.meniu>li{
+	float:left;	
+	text-align:center;
+	background-color: #333;
+	
+}
+
+li>a{
+	vertical-align: middle;
+	color:white;
+	font-family: myFirstFont;
+	font-size: 32px;
+	line-height: 50px;
+	height: 50px;
+	text-align:center;
+	margin-right:30px;
+	margin-left:30px;
+}
+
+.meniu>li:hover{
+	background-color:red;
+}
+
+.submeniu{
+	 display:none;
+}
+
+.meniu>li:hover .submeniu{
+	display: block;
+}
+
+.submeniu>ul>li{
+	background-color:black;
+}
+
+.submeniu>ul>li:hover{
+  background-color: #8B0000;
+}
+
+#special{
+background-color:red;
+float:right;
+} 
+
+#container{
+	width:100%;
+	
+}
+
+div>h2{
+	font-family: myFirstFont;
+	font-size: 32px;
+}
+
+div>h3{
+	font-family: myFirstFont;
+	color:#B22222;
+	font-size: 28px;
+}
+
+div>h4{
+	font-family: Impact, Charcoal, sans-serif;
+	font-size:20px;
+	text-decoration: underline;
+	opacity:0.8;
+}
+
+.impact{
+	font-family: Impact, Charcoal, sans-serif;
+	opacity:0.6;
+	font-size: 22px;
+}
+
+.impact2{
+	font-family: Impact, Charcoal, sans-serif;
+	opacity:0.6;
+	color:red;
+	font-size: 22px;
+}
+
+.img1{
+	height:300px;
+	width:450px;
+	border-radius: 10px;
+	float:right;
+
+	
+}
+
+.img1:hover{
+	transform: scaleX(-1);
+}
+
+#sec1{ 
+	height:300px;
+}
+
+
+section>p{
+	display:flex;
+	vertical-align:middle;
+	font-size:20px;
+}
+
+.vd{
+	width:480px;
+	height:400px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-container > div{
+	width: 200px;
+	margin: 30px;
+}
+
+.new{
+	width:100%;
+	border-radius: 50px;
+}
+
+.caption{
+	text-align:center;
+	font-family: myFirstFont;
+	color:black;
+
+}
+
+#tbl{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tbl td, #tbl th {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+#tbl tr:nth-child(even){background-color: grey; opacity:0.6;}
+
+#tbl th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F8F8FF;
+}
+

@@ -1,0 +1,173 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("shlop rg.ttf");
+}
+
+
+header>h1 { text-align:center; font-size: 80px; font-family: myFirstFont; }
+h2{font-family: myFirstFont;}
+
+body{ background-image: url('gray-painted-background_53876-94041.jpg');}
+
+.bats img{
+	width:75px;
+	animation: bat 7s linear infinite;
+}
+
+.bats{
+	width:100%;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: -80px;
+	
+}
+
+@keyframes bat{
+		0%{
+		transform: translateY(0);
+		opacity: 0;
+	}
+		50%{
+		
+		opacity: 1;
+	}
+		70%{
+		
+		opacity: 1;
+	}
+		100%{
+		transform: translateY(-80vh);
+		opacity: 0;
+	}
+}
+	
+	
+.bats img:nth-child(1){
+	animation-delay: 2s;
+	width:50px;
+}
+.bats img:nth-child(2){
+	animation-delay: 0.5s;
+}
+.bats img:nth-child(3){
+	animation-delay: 3s;
+	width:70px;
+}
+.bats img:nth-child(4){
+	animation-delay: 3.5s;
+}
+.bats img:nth-child(5){
+	animation-delay: 2.5s;
+	width:60px;
+}
+.bats img:nth-child(6){
+	animation-delay: 4s;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height:50px;
+	background-color: #333;
+	position: sticky;
+	top: 0;
+	z-index:1;
+
+}
+
+	
+.meniu>li{
+	float:left;	
+	text-align:center;
+	background-color: #333;
+	
+}
+
+li>a{
+	vertical-align: middle;
+	color:white;
+	font-family: myFirstFont;
+	font-size: 32px;
+	line-height: 50px;
+	height: 50px;
+	text-align:center;
+	margin-right:30px;
+	margin-left:30px;
+}
+
+.meniu>li:hover{
+	background-color:red;
+}
+
+.submeniu{
+	 display:none;
+}
+
+.meniu>li:hover .submeniu{
+	display: block;
+}
+
+.submeniu>ul>li{
+	background-color:black;
+}
+
+.submeniu>ul>li:hover{
+  background-color: #8B0000;
+}
+
+#special{
+background-color:red;
+float:right;
+} 
+
+.flex-container{
+	width:100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-container > div{
+	width: 300px;
+	margin: 30px;
+	
+}
+
+.image{
+	width:100%;
+	border-radius: 20px;
+	border: 1px solid red;
+}
+
+.caption{
+	text-align:center;
+	font-family: myFirstFont;
+	color:black;
+	font-size:30px;
+
+}
+
+.impact{
+	font-family: Impact, Charcoal, sans-serif;
+	opacity:0.6;
+	font-size: 20px;
+}
+
+#dw{
+	width:100px;
+	border-radius:50px;
+	position:absolute;
+	left: 15px;
+	top:0;
+}
+
+#pos{
+	position:absolute;
+	left: 25px;
+	top:150px;
+	font-family: myFirstFont;
+	z-index:0;
+}
