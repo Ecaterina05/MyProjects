@@ -1,1 +1,115 @@
 
+CREATE TABLE LOCATIE_SALON_EBA(
+    id_locatie NUMBER(4) NOT NULL PRIMARY KEY,
+    strada VARCHAR(50) NOT NULL,
+    numar_strada NUMBER(4) NOT NULL
+    );
+     
+CREATE TABLE SALON_EBA( 
+    id_salon NUMBER(4) NOT NULL PRIMARY KEY,
+    nume VARCHAR(50) DEFAULT 'Nedenumit' NOT NULL,
+    id_locatie NUMBER(4) NOT NULL,
+    FOREIGN KEY (id_locatie) REFERENCES  LOCATIE_SALON_EBA(id_locatie)
+    );
+   
+
+CREATE TABLE SERVICIU_EBA(
+    id_serviciu NUMBER(4) NOT NULL PRIMARY KEY,
+    denumire VARCHAR(50) NOT NULL,
+    cost_serviciu NUMBER(4) NOT NULL
+    );
+  
+CREATE TABLE CLIENT_EBA(
+    id_client NUMBER(4) NOT NULL PRIMARY KEY,
+    nume_client VARCHAR(50) NOT NULL,
+    prenume_client VARCHAR(50) NOT NULL
+    );
+    
+CREATE TABLE ANGAJAT_EBA(
+    id_angajat NUMBER(4) NOT NULL PRIMARY KEY,
+    id_salon NUMBER(4) NOT NULL,
+    FOREIGN KEY (id_salon) REFERENCES  SALON_EBA(id_salon),
+    nume_angajat VARCHAR(50) NOT NULL,
+    varsta_angajat NUMBER(2) NOT NULL,
+    numar_telefon NUMBER(10) NOT NULL,
+    salariu_angajat NUMBER(4) NOT NULL,
+    id_serviciu NUMBER(4) NOT NULL,
+    FOREIGN KEY (id_serviciu) REFERENCES  SERVICIU_EBA(id_serviciu)
+    );
+     
+CREATE TABLE PROGRAMARE_EBA(
+    id_angajat NUMBER(4) NOT NULL,
+    FOREIGN KEY (id_angajat) REFERENCES  ANGAJAT_EBA(id_angajat),
+    id_client NUMBER(4) NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES  CLIENT_EBA(id_client),
+    data_programare DATE,
+    ora_programare NUMBER(2)
+    );
+ 
+--INSERAM LOCATII SALON
+INSERT INTO LOCATIE_SALON_EBA( id_locatie, strada, numar_strada)
+VALUES( 1, 'Decebal', 84);
+INSERT INTO LOCATIE_SALON_EBA( id_locatie, strada, numar_strada)
+VALUES( 2, 'Marasesti', 12) ;
+INSERT INTO LOCATIE_SALON_EBA( id_locatie, strada, numar_strada)
+VALUES( 3, 'PetruRares', 22);
+
+--INSERAM SALOANE
+INSERT INTO SALON_EBA( id_salon, nume, id_locatie )
+VALUES(1, 'Orhideea', 2);
+INSERT INTO SALON_EBA(id_salon, nume, id_locatie)
+VALUES(2, 'BeautyMania', 1);
+INSERT INTO SALON_EBA(id_salon, nume, id_locatie)
+VALUES(3, 'LadyLike', 2);
+INSERT INTO SALON_EBA(id_salon, nume, id_locatie)
+VALUES(4, 'Glamour', 3);
+
+--INSERAM SERVICII DISPONIBILE
+INSERT INTO SERVICIU_EBA( id_serviciu, denumire, cost_serviciu )
+VALUES(1, 'Manichiura', 50);
+INSERT INTO SERVICIU_EBA( id_serviciu, denumire, cost_serviciu )
+VALUES(2, 'Pedichiura', 60);
+INSERT INTO SERVICIU_EBA( id_serviciu, denumire, cost_serviciu )
+VALUES(3, 'Coafat', 70);
+INSERT INTO SERVICIU_EBA( id_serviciu, denumire, cost_serviciu )
+VALUES(4, 'MakeUp', 100);
+INSERT INTO SERVICIU_EBA( id_serviciu, denumire, cost_serviciu )
+VALUES(5, 'Masaj', 75);
+
+--INSERAM CLIENTI
+INSERT INTO CLIENT_EBA( id_client, nume_client, prenume_client)
+VALUES(1, 'Rica', 'Simona');
+INSERT INTO CLIENT_EBA( id_client, nume_client, prenume_client)
+VALUES(2, 'Florea', 'Irina');
+INSERT INTO CLIENT_EBA( id_client, nume_client, prenume_client)
+VALUES(3, 'Popescu', 'Elena');
+INSERT INTO CLIENT_EBA( id_client, nume_client, prenume_client)
+VALUES(4, 'Ionescu', 'Maria');
+INSERT INTO CLIENT_EBA( id_client, nume_client, prenume_client)
+VALUES(5, 'Cazac', 'Raluca');
+
+--INSERAM ANGAJATI
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(1, 2, 'Nana', 34, 0736292333, 3000, 5);
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(2, 1, 'Sisi', 25, 0736889990, 3500, 3);
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(3, 2, 'Alina', 30, 0718883224, 4000, 4);
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(4, 3, 'Paula', 32, 0722443567, 2500, 1);
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(5, 1, 'Simina', 23, 0789770021, 2300, 2);
+INSERT INTO ANGAJAT_EBA( id_angajat, id_salon, nume_angajat, varsta_angajat, numar_telefon, salariu_angajat, id_serviciu)
+VALUES(6, 2, 'Rica', 27, 0723445223, 3200, 3);
+
+--INSERAM PROGRAMARI
+INSERT INTO PROGRAMARE_EBA( id_angajat, id_client, data_programare, ora_programare)
+VALUES(2, 1, TO_DATE('23-03-2019','DD-MM-YYYY'), 14);
+INSERT INTO PROGRAMARE_EBA( id_angajat, id_client, data_programare, ora_programare)
+VALUES(4, 2, TO_DATE('21-05-2019','DD-MM-YYYY'), 12);
+INSERT INTO PROGRAMARE_EBA( id_angajat, id_client, data_programare, ora_programare)
+VALUES(3, 3, TO_DATE('13-10-2019','DD-MM-YYYY'), 10);
+INSERT INTO PROGRAMARE_EBA( id_angajat, id_client, data_programare, ora_programare)
+VALUES(6, 4, TO_DATE('11-08-2019','DD-MM-YYYY'), 16);
+INSERT INTO PROGRAMARE_EBA( id_angajat, id_client, data_programare, ora_programare)
+VALUES(5, 5, TO_DATE('30-03-2019','DD-MM-YYYY'), 13);
